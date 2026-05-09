@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clients</title>
+    <link rel="stylesheet" href="clients.css">
+    <link rel="icon" href="MDC.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+              <img src="MDC.png" alt="Your Logo">
+            </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Clients Section -->
+    <section class="clients">
+
+        <h2>OUR CLIENTS</h2>
+        <div class="client-list">
+            <div class="client-item">
+                <img src="client/bank.jpg" alt="Banks">
+                <p>BANKS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/hospital.jpg" alt="Hospital">
+                <p>HOSPITALS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/school.jpg" alt="School">
+                <p>SCHOOLS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/hardware1.jpg" alt="Hardware">
+                <p>HARDWARE AND CONSTRUCTION SUPPLIES</p>
+            </div>
+            <div class="client-item">
+                <img src="client/individual.webp" alt="Individuals">
+                <p>INDIVIDUALS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/cooperative.jpg" alt="Cooperatives">
+                <p>COOPERATIVES</p>
+            </div>
+            <div class="client-item">
+                <img src="client/gasoline.jpg" alt="Gasoline Station">
+                <p>GASOLINE STATIONS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/lending.jpeg" alt="Lending Institution">
+                <p>LENDING INSTITUTIONS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/PNP.jpeg" alt="Philippine National Police">
+                <p>PHILIPPINE NATIONAL POLICE</p>
+            </div>
+            <div class="client-item">
+                <img src="client/church.jpg" alt="Church">
+                <p>CHURCHES</p>
+            </div>
+            <div class="client-item">
+                <img src="client/agrivet.jpg" alt="Agrivet Supply">
+                <p>AGRIVET SUPPLIES</p>
+            </div>
+
+            <!-- ✅ New Items Start Here -->
+            <div class="client-item">
+                <img src="client/lawyer.webp" alt="Lawyer">
+                <p>LAWYER</p>
+            </div>
+            <div class="client-item">
+                <img src="client/porjoectcontractor.webp" alt="Project Contractor">
+                <p>PROJECT CONTRACTORS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/drygoods.jpg" alt="Dry Goods and Apparel">
+                <p>DRY GOODS AND APPAREL</p>
+            </div>
+            <div class="client-item">
+                <img src="client/tires.webp" alt="Fires and Lubricant">
+                <p>TIRE AND LUBRICANTS</p>
+            </div>
+            <div class="client-item">
+                <img src="client/pharmaceutical.jpg" alt="Pharmaceutical">
+                <p>PHARMACEUTICAL</p>
+            </div>
+            <div class="client-item">
+                <img src="client/funeralhomes.jpg" alt="Funeral Homes">
+                <p>FUNERAL HOMES</p>
+            </div>
+            <!-- ✅ New Items End Here -->
+
+        </div>
+    </section>
+
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

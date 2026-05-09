@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimony</title>
+    <link rel="stylesheet" href="testimony.css">
+    <link rel="icon" href="MDC.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+                            <img src="MDC.png" alt="Your Logo">
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 24 Testimonies Grid Section with Videos -->
+    <section class="testimonies">
+        <h2>Debtor Testimonies</h2>
+        <div class="testimony-list">
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/1.mp4" type="video/mp4">
+                    
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/2.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/3.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/4.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/5.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/6.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/7.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/8.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/9.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/10.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/11.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/12.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/13.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/14.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/15.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/16.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/17.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/18.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/19.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/20.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/21.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/22.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/23.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="testimony-item">
+                <video controls>
+                    <source src="mp4/24.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

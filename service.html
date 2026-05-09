@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="icon" href="MDC.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+                            <img src="MDC.png" alt="Your Logo">
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Our Services Section -->
+        <section class="services">
+            <h2>Our Services</h2>
+            <ul class="service-list">
+                <li>CREDIT BUREAU</li>
+                <li>DEBT RECOVERY OUTSOURCING</li>
+                <li>FACILITATE DEBTOR/BORROWERS SKIP TRACING</li>
+                <li>FACILITATE LENDING PROCESS SEMINAR/WORKSHOP</li>
+                <li>EVALUATIONS OF WRITTEN-OFF AND HARD ACCOUNTS FINANCIAL STATUS</li>
+                <li>CONDUCTING CI/BI/FIELD INVESTIGATION</li>
+                <li>AMICABLE SETTLEMENT</li>
+                <li>COUNSELING</li>
+                <li>FIELD AUDIT</li>
+                <li>LITIGATION</li>
+                <li>RETAINERSHIP</li>
+
+            </ul>
+        </section>
+    </div>
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

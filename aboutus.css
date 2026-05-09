@@ -1,0 +1,575 @@
+/* -------------------- GLOBAL RESET -------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway, sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    /* Allow scrolling on the body */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('bg/12.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(3px);
+    /* ✅ Blur the background image */
+    transform: scale(1.05);
+    /* ✅ Prevent clipping at edges due to blur */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f9fc;
+}
+
+
+/* -------------------- NAVBAR -------------------- */
+
+nav {
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white */
+    backdrop-filter: blur(5px);
+    /* Blurs background */
+    -webkit-backdrop-filter: blur(5px);
+    /* Safari support */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    /* Smooth shape even before hover */
+}
+
+
+/* Hover and Active styles */
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-color: #7a766cde;
+    transform: scale(1.1);
+    /* Slight expansion */
+    border-radius: 15px;
+    /* ✅ Rounded square shape on hover */
+}
+
+
+/* Active link */
+
+.navbar ul li a.active {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    /* ✅ Rounded shape stays on active */
+}
+
+
+/* Optional underline effect on hover */
+
+.navbar ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #7a766cde;
+    transform: scaleX(1);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+
+/* -------------------- Animation -------------------- */
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* End in place */
+    }
+}
+
+.navbar ul li {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+
+/* Staggered animation (each list item appears with delay) */
+
+.navbar ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.navbar ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.navbar ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.navbar ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.navbar ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.navbar ul li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.navbar ul li:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.navbar ul li:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+.navbar ul li:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+.navbar ul li:nth-child(10) {
+    animation-delay: 1s;
+}
+
+
+/* Active link */
+
+.navbar ul li a.active {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.navbar ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    /* Thin line for underline */
+    background-color: rgb(0, 0, 0);
+    transform: scaleX(0);
+    /* Initially hidden */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+
+/* -------------------- Responsive -------------------- */
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        /* Vertical stack */
+        gap: 10px;
+        align-items: center;
+        /* Center items */
+    }
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 12px 20px;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}
+
+
+/* -------------------- ABOUT US -------------------- */
+
+
+/* COMPANY INFO SECTION - BIGGER CARDS */
+
+.company-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    /* wider space between cards */
+    padding: 60px 40px;
+    /* more breathing space */
+    max-width: 1440px;
+    /* wider container than 1200px */
+    margin: 0 auto;
+    align-items: start;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.company-info .info-block {
+    background: rgba(255, 255, 255, 0.04);
+    border: 3px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    padding: 32px;
+    /* more padding inside each card */
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(8, 15, 25, 0.35);
+    color: #eef2f6;
+    line-height: 1.75;
+    /* taller line-height for readability */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+.company-info .info-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 30px rgba(8, 15, 25, 0.45);
+}
+
+.company-info .info-block h1,
+.company-info .info-block h2 {
+    margin: 0 0 14px;
+    font-family: "Raleway", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.company-info .info-block h1 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.company-info .info-block h2 {
+    font-size: 1.1rem;
+}
+
+.company-info .info-block p {
+    margin: 0 0 16px;
+    color: #dbe6ee;
+    font-size: 1rem;
+}
+
+.company-info .info-block ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+}
+
+.company-info .info-block ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #d0e0ea;
+}
+
+.company-info .info-block li strong {
+    color: #ffffff;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+    .company-info {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        padding: 40px 28px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .company-info {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 16px;
+    }
+    .company-info .info-block h1 {
+        font-size: 1.1rem;
+    }
+    .company-info .info-block p,
+    .company-info .info-block li {
+        font-size: 1rem;
+    }
+}
+
+
+/* Section container */
+
+.mission-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+
+/* MOTTO BOX */
+
+.motto {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    margin: 2rem auto 3rem;
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    /* clickable */
+}
+
+
+/* Add "Click Me" reminder */
+
+.motto::after {
+    content: " 👋 Click Me";
+    font-size: 1rem;
+    margin-left: 10px;
+    display: inline-block;
+    color: gold;
+    font-weight: 600;
+    animation: wave 1.2s infinite ease-in-out;
+    opacity: 0.9;
+}
+
+
+/* Rotate animation stops when active (optional) */
+
+.motto.active::after {
+    content: " 👆 Opened";
+    animation: none;
+    opacity: 1;
+}
+
+
+/* Waving animation */
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(10deg);
+    }
+    30% {
+        transform: rotate(-8deg);
+    }
+    45% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(-6deg);
+    }
+    75% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* Active (click) effect */
+
+.motto.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+
+/* Show boxes when motto is active */
+
+.motto.active~.main_content .left,
+.motto.active~.main_content .right {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Highlight certain words */
+
+.motto span {
+    color: gold;
+    font-weight: 600;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0 auto 2rem auto;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid gold;
+    padding-bottom: 6px;
+    width: fit-content;
+}
+
+
+/* INTRO TEXT */
+
+.intro {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+
+/* MAIN CONTENT LAYOUT */
+
+.main_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* GLASS-LIKE CONTENT CARDS */
+
+
+/* Initially hidden */
+
+.left,
+.right {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+/* When .show-boxes is on main_content, show them */
+
+.main_content.show-boxes .left,
+.main_content.show-boxes .right {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left p,
+.right p,
+.right li {
+    color: #ffffff;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.right h3 {
+    color: #ffffff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+}
+
+.right ul,
+.right ol {
+    padding-left: 1.2rem;
+}
+
+.right li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .main_content {
+        grid-template-columns: 1fr;
+    }
+}

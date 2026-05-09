@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area Coverage</title>
+    <link rel="stylesheet" href="areacoverage.css">
+    <link rel="icon" href="MDC.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url('bg5.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+                            <img src="MDC.png" alt="Your Logo">
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <section class="area-coverage">
+        <h2>Area Coverage</h2>
+        <div class="slideshow">
+
+            <div class="slide active">
+                <img src="coverage/Luzons.avif" alt="Map of Luzon" class="region-map">
+                <h3>Luzon</h3>
+            </div>
+
+            <div class="slide">
+                <img src="coverage/eastern.avif" alt="Map of Eastern Visayas" class="region-map">
+                <h3>Eastern Visayas</h3>
+            </div>
+
+            <div class="slide">
+                <img src="coverage/western.avif" alt="Map of Western Visayas" class="region-map">
+                <h3>Western Visayas</h3>
+            </div>
+
+            <div class="slide">
+                <img src="coverage/mindanaos.avif" alt="Map of Mindanao" class="region-map">
+                <h3>Mindanao</h3>
+            </div>
+
+            <!-- Manual Controls -->
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+
+            <!-- Dots -->
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+
+            let currentIndex = 0;
+            let slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+            function showSlide(index) {
+                if (index >= slides.length) index = 0;
+                if (index < 0) index = slides.length - 1;
+                currentIndex = index;
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentIndex);
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            // Reset auto slide timer on manual navigation
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Event listeners for buttons
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetInterval();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetInterval();
+            });
+
+            // Event listeners for dots
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    showSlide(idx);
+                    resetInterval();
+                });
+            });
+
+            // Initialize the slideshow
+            showSlide(currentIndex);
+        });
+    </script>
+
+
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

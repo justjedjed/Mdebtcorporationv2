@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutus.css">
+    <link rel="icon" href="MDC.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+                            <img src="MDC.png" alt="Your Logo">
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areaCoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+
+    <section class="mission-section">
+        <div class="container">
+
+
+            <h1 class="motto">OUR MOTTO: <span>"CLIENT SERVICE THROUGH COMMITMENT & DEDICATION"</span></h1>
+            <h2 class="section-title">M Debt Corporation Mission Statement & Core Value</h2>
+            <p class="intro">
+                What differentiates us from other Debt Corporation Agencies.
+            </p>
+
+            <div class="main_content">
+                <div class="left">
+                    <p>Rather than just a debt corporation Agency, M Debt corporation is one of the few offices in Caraga Region established on a Debt Corporation and management background & who have combined legal & professional skills matched with experience
+                        to service your requirements effectively.</p>
+                    <p>M Debt Corporation prides itself on being a reputed firm in the market by providing our client with the traditional level of fair debt corporation practices whilst using the latest corporation techniques. This ensures very satisfied
+                        client who have in turn referred a majority of hard accounts to M Debt Collection shall be conducted through ethical and lawful means with the highest level of customer service.</p>
+                    <p>M Debt Corporation has vast experience in collecting, settling & re-scheduling debts in an amicable way, handling and following relative legal matters supported by our Management team, legal consultant & professional client support
+                        personnel.
+                    </p>
+                    <p>M Debt Corporation can make a difference to your company by “Improving Cash Flow And Minimizing Bad Debts” and our policy is to add value through close contact with our clients.</p>
+                    <p>M Debt Corporation is situated in the heart of San Francisco, Agusan Sur, Head Office. Our Corporation Operation covered in Luzon, Visayas and Minadanao. You are most welcome to visit our office.</p>
+                </div>
+
+                <div class="right">
+                    <h3>The core of the office Activity:</h3>
+                    <p>M Debt Corporation is regarded as one of the offices having huge experience in collecting, settling and re-scheduling debts in an amicable way...</p>
+
+                    <h3>Duties of the Office</h3>
+                    <ul>
+                        <li>Collecting, settling or rescheduling all types of debts (dishonored PDCs, promissory notes, etc.)</li>
+                        <li>Collecting debts from lending institutions, cooperatives and banks with cost-effective recovery.</li>
+                        <li>Providing corporate debt corporation services to both local & multinational companies.</li>
+                        <li>Skip Tracing — locate cases and enable amicable settlements.</li>
+                    </ul>
+
+                    <h3>Nature of Office Activity</h3>
+                    <p>The nature of our job as our name signifies which is debt collection is based on two things:</p>
+                    <ol>
+                        <li><strong>Amicable Settlement:</strong> The main method provided by our firm is collecting & settling debts in an amicable way to avoid legal expenses.</li>
+                        <li><strong>Legal case:</strong> If amicable settlement fails, we refer the case to our legal counsel with the client’s approval.</li>
+                    </ol>
+
+                    <p>We hope this brief gives adequate introduction to our professional and work as a base of profitable relationship for all based on Diligence & Excellency in work. We hereby devote all our experience to provide our best services.</p>
+                    <p><strong>We look forward to doing business with you.</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const motto = document.querySelector(".motto");
+            const mainContent = document.querySelector(".main_content");
+
+            motto.addEventListener("click", () => {
+                mainContent.classList.toggle("show-boxes");
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const motto = document.querySelector(".motto");
+
+            motto.addEventListener("click", function() {
+                this.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Services</title>
+    <link rel="stylesheet" href="communityservice.css" />
+    <link rel="icon" href="MDC.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <nav>
+                <div class="navbar">
+                    <!-- Logo placed inside a span with an image -->
+                    <a href="home.html">
+                        <span class="logo">
+                            <img src="MDC.png" alt="" />
+                        </span>
+                    </a>
+
+                    <!-- Navigation Menu -->
+                    <ul>
+                        <li><a href="aboutus.html">Home</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <section class="community">
+        <h2>Our Community Services</h2>
+        <div class="community-list">
+            <div class="community-item"><img src="photo/c21.jpg" alt="Photo 21" /></div>
+            <div class="community-item"><img src="photo/c22.jpg" alt="Photo 22" /></div>
+            <div class="community-item"><img src="photo/c8.webp" alt="Photo 8" /></div>
+            <div class="community-item"><img src="photo/c9.webp" alt="Photo 9" /></div>
+            <div class="community-item"><img src="photo/c10.webp" alt="Photo 10" /></div>
+            <div class="community-item"><img src="photo/c11.webp" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c15.webp" alt="Photo 15" /></div>
+            <div class="community-item"><img src="photo/c16.webp" alt="Photo 16" /></div>
+            <div class="community-item"><img src="photo/c17.webp" alt="Photo 17" /></div>
+            <div class="community-item"><img src="photo/c18.webp" alt="Photo 18" /></div>
+            <div class="community-item"><img src="photo/c19.webp" alt="Photo 19" /></div>
+            <div class="community-item"><img src="photo/c20.webp" alt="Photo 20" /></div>
+            <div class="community-item"><img src="photo/c33.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c34.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c35.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c36.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c37.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c38.jpg" alt="Photo 11" /></div>
+            <div class="community-item"><img src="photo/c39.jpg" alt="Photo 11" /></div>
+
+
+
+        </div>
+    </section>
+    <script>
+        const currentPage = location.pathname.split("/").pop(); // e.g. aboutus.html
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
