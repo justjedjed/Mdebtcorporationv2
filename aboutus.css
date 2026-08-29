@@ -23,7 +23,7 @@ body::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('bg/12.jpg');
+    background-image: url('bg/12.webp');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -43,218 +43,511 @@ body {
     font-family: "Raleway", sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f7f9fc;
+    background-color: #000000;
 }
 
 
-/* -------------------- NAVBAR -------------------- */
+/* =========================================
+   MODERN GLASS NAVBAR
+========================================= */
 
 nav {
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent white */
-    backdrop-filter: blur(5px);
-    /* Blurs background */
-    -webkit-backdrop-filter: blur(5px);
-    /* Safari support */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     position: sticky;
-    top: 0;
+
+    top: 12px;
+
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1.2rem;
+
+    width: calc(100% - 30px);
+
+    margin: 12px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 15, 15, 0.82),
+            rgba(30, 30, 30, 0.62)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
+
+
+/* =========================================
+   NAVBAR CONTAINER
+========================================= */
 
 .navbar {
-    max-width: 1200px;
+    width: min(1200px, 100%);
+
+    min-height: 75px;
+
     margin: auto;
-    padding: 0.8rem 2rem;
+
+    padding: 8px 20px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
-.logo img {
-    height: 80px;
-    width: auto;
-    margin-right: 20px;
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+
+.logo img {
+    display: block;
+
+    height: 65px;
+
+    width: auto;
+
+    margin-right: 20px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 5px 12px rgba(0, 0, 0, 0.35)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
+
+
+.logo:hover img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 7px 16px rgba(212, 175, 55, 0.2)
+        );
+}
+
+
+/* =========================================
+   NAVIGATION LIST
+========================================= */
+
+.navbar ul {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
 
 .navbar ul li {
     position: relative;
+
+    opacity: 0;
+
+    animation:
+        navFadeUp 0.6s ease forwards;
 }
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .navbar ul li a {
-    display: inline-block;
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
     padding: 10px 15px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
     text-decoration: none;
-    color: white;
-    border-radius: 8px;
-    /* Smooth shape even before hover */
+
+    white-space: nowrap;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 12px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
-/* Hover and Active styles */
+/* =========================================
+   HOVER
+========================================= */
 
-.navbar ul li a:hover,
+.navbar ul li a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
 .navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-color: #7a766cde;
-    transform: scale(1.1);
-    /* Slight expansion */
-    border-radius: 15px;
-    /* ✅ Rounded square shape on hover */
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border-color:
+        rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
 }
 
 
-/* Active link */
+/* =========================================
+   GOLD ACTIVE INDICATOR
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    /* ✅ Rounded shape stays on active */
+.navbar ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f5d76e
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px rgba(212, 175, 55, 0.35);
+
+    transition:
+        width 0.3s ease;
 }
 
 
-/* Optional underline effect on hover */
+/* Hover underline */
 
 .navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background-color: #7a766cde;
-    transform: scaleX(1);
-    transform-origin: bottom center;
-    transition: transform 0.3s ease;
-    border-radius: 2px;
+    width: 45%;
 }
 
 
-/* -------------------- Animation -------------------- */
+/* Active underline */
 
-@keyframes fadeUp {
-    0% {
+.navbar ul li a.active::after {
+    width: 55%;
+}
+
+
+/* =========================================
+   NAVBAR SCROLL / HOVER EFFECT
+========================================= */
+
+nav:hover {
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   NAVIGATION ANIMATION
+========================================= */
+
+@keyframes navFadeUp {
+
+    from {
         opacity: 0;
-        transform: translateY(20px);
-        /* Start slightly below */
+
+        transform:
+            translateY(-12px);
     }
-    100% {
+
+    to {
         opacity: 1;
-        transform: translateY(0);
-        /* End in place */
+
+        transform:
+            translateY(0);
     }
-}
 
-.navbar ul li {
-    animation: fadeUp 0.6s ease forwards;
-    opacity: 0;
 }
 
 
-/* Staggered animation (each list item appears with delay) */
+/* =========================================
+   STAGGERED NAVIGATION
+========================================= */
 
 .navbar ul li:nth-child(1) {
     animation-delay: 0.1s;
 }
 
 .navbar ul li:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .navbar ul li:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .navbar ul li:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.25s;
 }
 
 .navbar ul li:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .navbar ul li:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: 0.35s;
 }
 
 .navbar ul li:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
 }
 
 .navbar ul li:nth-child(8) {
-    animation-delay: 0.8s;
+    animation-delay: 0.45s;
 }
 
 .navbar ul li:nth-child(9) {
-    animation-delay: 0.9s;
+    animation-delay: 0.5s;
 }
 
 .navbar ul li:nth-child(10) {
-    animation-delay: 1s;
+    animation-delay: 0.55s;
 }
 
 
-/* Active link */
+/* =========================================
+   TABLET
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+@media (max-width: 1050px) {
+
+    nav {
+        width: calc(100% - 20px);
+    }
+
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .logo img {
+        height: 58px;
+    }
+
+    .navbar ul {
+        gap: 2px;
+    }
+
+    .navbar ul li a {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
 }
 
-.navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    /* Thin line for underline */
-    background-color: rgb(0, 0, 0);
-    transform: scaleX(0);
-    /* Initially hidden */
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
 
-
-/* -------------------- Responsive -------------------- */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
-    .navbar ul {
+
+    nav {
+        position: sticky;
+
+        top: 8px;
+
+        width: calc(100% - 16px);
+
+        border-radius: 18px;
+    }
+
+    .navbar {
         flex-direction: column;
-        /* Vertical stack */
-        gap: 10px;
-        align-items: center;
-        /* Center items */
+
+        gap: 12px;
+
+        padding: 12px 15px;
     }
+
+    .logo {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .logo img {
+        height: 58px;
+
+        margin-right: 0;
+    }
+
+    .navbar ul {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
     .navbar ul li a {
-        font-size: 16px;
-        padding: 12px 20px;
-        display: block;
+        padding: 8px 12px;
+
+        font-size: 12px;
+
+        border-radius: 10px;
     }
+
+    .navbar ul li a:hover {
+        transform: translateY(-1px);
+    }
+
 }
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 480px) {
-    .navbar ul li a {
-        font-size: 14px;
-        padding: 10px 18px;
+
+    nav {
+        width: calc(100% - 10px);
+
+        top: 5px;
+
+        border-radius: 15px;
     }
+
+    .navbar {
+        padding: 10px;
+
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .navbar ul {
+        gap: 4px;
+    }
+
+    .navbar ul li a {
+        padding: 7px 9px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.2px;
+    }
+
 }
 
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .navbar ul li a {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
+}
 
 /* -------------------- ABOUT US -------------------- */
 
@@ -445,131 +738,594 @@ nav {
     }
 }
 
+/* =========================================
+   MODERN MOTTO / CONTENT SECTION
+========================================= */
 
-/* Active (click) effect */
+/* =========================================
+   MOTTO ACTIVE STATE
+========================================= */
 
 .motto.active {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.05);
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.14),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(212, 175, 55, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 
-/* Show boxes when motto is active */
+/* Active gold glow */
+
+.motto.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20%;
+    bottom: 0;
+
+    width: 60%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            #f5d76e,
+            #d4af37,
+            transparent
+        );
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   SHOW CONTENT WHEN MOTTO IS ACTIVE
+========================================= */
 
 .motto.active~.main_content .left,
 .motto.active~.main_content .right {
     opacity: 1;
+
     transform: translateY(0);
 }
 
 
-/* Highlight certain words */
+/* =========================================
+   MOTTO HIGHLIGHTED WORDS
+========================================= */
 
 .motto span {
-    color: gold;
-    font-weight: 600;
+    color: #f1ce63;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 12px rgba(212, 175, 55, 0.18);
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 
-/* SECTION TITLE */
+.motto:hover span {
+    color: #f5d76e;
+
+    text-shadow:
+        0 0 18px rgba(212, 175, 55, 0.3);
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
 
 .section-title {
+    position: relative;
+
     display: block;
-    text-align: center;
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin: 0 auto 2rem auto;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-bottom: 2px solid gold;
-    padding-bottom: 6px;
+
     width: fit-content;
+
+    margin: 0 auto 2.5rem;
+
+    padding: 12px 28px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: clamp(26px, 3vw, 36px);
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 
-/* INTRO TEXT */
+/* Gold underline */
+
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 45%;
+    height: 3px;
+
+    margin: 9px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            #f5d76e,
+            #d4af37,
+            transparent
+        );
+
+    border-radius: 10px;
+}
+
+
+.section-title:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(212, 175, 55, 0.65);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+
+/* =========================================
+   INTRO TEXT
+========================================= */
 
 .intro {
+    position: relative;
+
+    max-width: 850px;
+
+    margin: 0 auto 2.8rem;
+
     text-align: center;
-    margin-bottom: 2.5rem;
-    color: #ffffff;
+
+    color: rgba(255, 255, 255, 0.78);
+
     font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.2px;
 }
 
 
-/* MAIN CONTENT LAYOUT */
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .main_content {
+    position: relative;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    width: min(1200px, calc(100% - 40px));
+
     margin: 0 auto;
+
+    padding: 10px;
 }
 
 
-/* GLASS-LIKE CONTENT CARDS */
-
-
-/* Initially hidden */
+/* =========================================
+   GLASS CONTENT CARDS
+========================================= */
 
 .left,
 .right {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 40px 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+    padding: 35px 30px;
+
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 17, 17, 0.411),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.61),
+        inset 0 1px 0 rgba(3, 3, 3, 0.589);
+
+    overflow: hidden;
+
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
 }
 
 
-/* When .show-boxes is on main_content, show them */
+/* =========================================
+   GOLD TOP ACCENT
+========================================= */
+
+.left::before,
+.right::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            #f5d76e,
+            #d4af37,
+            transparent
+        );
+
+    opacity: 0.5;
+
+    transition:
+        width 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.left:hover,
+.right:hover {
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212, 175, 55, 0.09),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border-color:
+        rgba(212, 175, 55, 0.4);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.28),
+        0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+
+.left:hover::before,
+.right:hover::before {
+    width: 85%;
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   SHOW BOXES
+========================================= */
 
 .main_content.show-boxes .left,
 .main_content.show-boxes .right {
     opacity: 1;
+
     transform: translateY(0);
 }
+
+
+/* =========================================
+   LEFT / RIGHT TEXT
+========================================= */
 
 .left p,
 .right p,
 .right li {
-    color: #ffffff;
-    font-size: 1.3rem;
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
     margin-bottom: 1rem;
+
     text-align: justify;
 }
 
+
+/* =========================================
+   RIGHT HEADINGS
+========================================= */
+
 .right h3 {
-    color: #ffffff;
+    position: relative;
+
+    color: #f1ce63;
+
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 4px;
+
+    margin-bottom: 0.8rem;
+
+    padding-bottom: 10px;
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    border-bottom:
+        1px solid rgba(212, 175, 55, 0.25);
 }
+
+
+/* Small gold heading accent */
+
+.right h3::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 18px;
+
+    margin-right: 10px;
+
+    vertical-align: -3px;
+
+    background: #d4af37;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   LISTS
+========================================= */
 
 .right ul,
 .right ol {
-    padding-left: 1.2rem;
+    padding-left: 1.4rem;
+
+    margin-bottom: 1.2rem;
 }
+
 
 .right li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
+
+    padding-left: 5px;
 }
 
 
-/* RESPONSIVE */
+/* Gold list markers */
+
+.right ul li::marker,
+.right ol li::marker {
+    color: #d4af37;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   OPTIONAL CONTENT ICON
+   Use .content-icon if needed
+========================================= */
+
+.content-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 18px;
+
+    color: #d4af37;
+
+    font-size: 24px;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.25);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.left:hover .content-icon,
+.right:hover .content-icon {
+    transform: scale(1.08);
+
+    background:
+        rgba(212, 175, 55, 0.14);
+
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
 
 @media (max-width: 900px) {
+
     .main_content {
         grid-template-columns: 1fr;
+
+        width: calc(100% - 30px);
     }
+
+    .left,
+    .right {
+        padding: 30px 25px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .main_content {
+        width: calc(100% - 20px);
+
+        gap: 16px;
+
+        padding: 5px;
+    }
+
+    .section-title {
+        font-size: 25px;
+
+        padding: 10px 20px;
+
+        margin-bottom: 2rem;
+    }
+
+    .intro {
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 2rem;
+    }
+
+    .left,
+    .right {
+        padding: 25px 20px;
+
+        border-radius: 16px;
+    }
+
+    .left p,
+    .right p,
+    .right li {
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+    }
+
+    .right h3 {
+        font-size: 1.15rem;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .left,
+    .right {
+        padding: 22px 16px;
+    }
+
+    .left p,
+    .right p,
+    .right li {
+        font-size: 0.9rem;
+    }
+
 }

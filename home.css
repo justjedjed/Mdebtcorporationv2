@@ -23,7 +23,7 @@ body::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('bg/12.jpg');
+    background-image: url('bg/12.webp');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -46,268 +46,512 @@ body {
     background-color: #f7f9fc;
 }
 
-
-/* -------------------- NAVBAR -------------------- */
+/* =========================================
+   MODERN GLASS NAVBAR
+========================================= */
 
 nav {
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent white */
-    backdrop-filter: blur(5px);
-    /* Blurs background */
-    -webkit-backdrop-filter: blur(5px);
-    /* Safari support */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     position: sticky;
-    top: 0;
+
+    top: 12px;
+
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1.2rem;
+
+    width: calc(100% - 30px);
+
+    margin: 12px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 15, 15, 0.82),
+            rgba(30, 30, 30, 0.62)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
+
+
+/* =========================================
+   NAVBAR CONTAINER
+========================================= */
 
 .navbar {
-    max-width: 1200px;
+    width: min(1200px, 100%);
+
+    min-height: 75px;
+
     margin: auto;
-    padding: 0.8rem 2rem;
+
+    padding: 8px 20px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
-.logo img {
-    height: 80px;
-    width: auto;
-    margin-right: 20px;
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+
+.logo img {
+    display: block;
+
+    height: 65px;
+
+    width: auto;
+
+    margin-right: 20px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 5px 12px rgba(0, 0, 0, 0.35)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
+
+
+.logo:hover img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 7px 16px rgba(212, 175, 55, 0.2)
+        );
+}
+
+
+/* =========================================
+   NAVIGATION LIST
+========================================= */
+
+.navbar ul {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
 
 .navbar ul li {
     position: relative;
+
+    opacity: 0;
+
+    animation:
+        navFadeUp 0.6s ease forwards;
 }
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .navbar ul li a {
-    display: inline-block;
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
     padding: 10px 15px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
     text-decoration: none;
-    color: white;
-    border-radius: 8px;
-    /* Smooth shape even before hover */
+
+    white-space: nowrap;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 12px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
-/* Hover and Active styles */
+/* =========================================
+   HOVER
+========================================= */
 
-.navbar ul li a:hover,
+.navbar ul li a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
 .navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-color: #7a766cde;
-    transform: scale(1.1);
-    /* Slight expansion */
-    border-radius: 15px;
-    /* ✅ Rounded square shape on hover */
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border-color:
+        rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
 }
 
 
-/* Active link */
+/* =========================================
+   GOLD ACTIVE INDICATOR
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    /* ✅ Rounded shape stays on active */
+.navbar ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f5d76e
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px rgba(212, 175, 55, 0.35);
+
+    transition:
+        width 0.3s ease;
 }
 
 
-/* Optional underline effect on hover */
+/* Hover underline */
 
 .navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background-color: #7a766cde;
-    transform: scaleX(1);
-    transform-origin: bottom center;
-    transition: transform 0.3s ease;
-    border-radius: 2px;
+    width: 45%;
 }
 
 
-/* -------------------- Animation -------------------- */
+/* Active underline */
 
-@keyframes fadeUp {
-    0% {
+.navbar ul li a.active::after {
+    width: 55%;
+}
+
+
+/* =========================================
+   NAVBAR SCROLL / HOVER EFFECT
+========================================= */
+
+nav:hover {
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   NAVIGATION ANIMATION
+========================================= */
+
+@keyframes navFadeUp {
+
+    from {
         opacity: 0;
-        transform: translateY(20px);
-        /* Start slightly below */
+
+        transform:
+            translateY(-12px);
     }
-    100% {
+
+    to {
         opacity: 1;
-        transform: translateY(0);
-        /* End in place */
+
+        transform:
+            translateY(0);
     }
-}
 
-.navbar ul li {
-    animation: fadeUp 0.6s ease forwards;
-    opacity: 0;
 }
 
 
-/* Staggered animation (each list item appears with delay) */
+/* =========================================
+   STAGGERED NAVIGATION
+========================================= */
 
 .navbar ul li:nth-child(1) {
     animation-delay: 0.1s;
 }
 
 .navbar ul li:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .navbar ul li:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .navbar ul li:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.25s;
 }
 
 .navbar ul li:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .navbar ul li:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: 0.35s;
 }
 
 .navbar ul li:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
 }
 
 .navbar ul li:nth-child(8) {
-    animation-delay: 0.8s;
+    animation-delay: 0.45s;
 }
 
 .navbar ul li:nth-child(9) {
-    animation-delay: 0.9s;
+    animation-delay: 0.5s;
 }
 
 .navbar ul li:nth-child(10) {
-    animation-delay: 1s;
+    animation-delay: 0.55s;
 }
 
 
-/* Active link */
+/* =========================================
+   TABLET
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+@media (max-width: 1050px) {
+
+    nav {
+        width: calc(100% - 20px);
+    }
+
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .logo img {
+        height: 58px;
+    }
+
+    .navbar ul {
+        gap: 2px;
+    }
+
+    .navbar ul li a {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
 }
 
-.navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    /* Thin line for underline */
-    background-color: rgb(0, 0, 0);
-    transform: scaleX(0);
-    /* Initially hidden */
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
 
-
-/* -------------------- Responsive -------------------- */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
-    .navbar ul {
+
+    nav {
+        position: sticky;
+
+        top: 8px;
+
+        width: calc(100% - 16px);
+
+        border-radius: 18px;
+    }
+
+    .navbar {
         flex-direction: column;
-        /* Vertical stack */
-        gap: 10px;
-        align-items: center;
-        /* Center items */
+
+        gap: 12px;
+
+        padding: 12px 15px;
     }
+
+    .logo {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .logo img {
+        height: 58px;
+
+        margin-right: 0;
+    }
+
+    .navbar ul {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
     .navbar ul li a {
-        font-size: 16px;
-        padding: 12px 20px;
-        display: block;
+        padding: 8px 12px;
+
+        font-size: 12px;
+
+        border-radius: 10px;
     }
+
+    .navbar ul li a:hover {
+        transform: translateY(-1px);
+    }
+
 }
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 480px) {
-    .navbar ul li a {
-        font-size: 14px;
-        padding: 10px 18px;
+
+    nav {
+        width: calc(100% - 10px);
+
+        top: 5px;
+
+        border-radius: 15px;
     }
+
+    .navbar {
+        padding: 10px;
+
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .navbar ul {
+        gap: 4px;
+    }
+
+    .navbar ul li a {
+        padding: 7px 9px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.2px;
+    }
+
 }
 
 
-/* General Reset */
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media (max-width: 380px) {
+
+    .navbar ul li a {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: #3B3B3B;
-    color: #fff;
-    line-height: 1.6;
-}
-
-
-/* Header */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background-color: #1C1C1C;
-}
-
-header .logo {
-    font-weight: bold;
-    color: #ffd700;
-    /* gold color */
-    font-size: 1.2rem;
-}
-
-nav ul {
-    display: flex;
-    gap: rem;
-    list-style: none;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffd700;
-}
-
-
-/* Shared base styles for all hero sections */
+/* =========================================
+   MODERN HERO DESIGN
+   ANIMATIONS PRESERVED
+========================================= */
 
 .hero,
 .hero1,
@@ -316,103 +560,349 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
     text-align: left;
-    padding: 1rem 2rem;
-    /* Reduced vertical and horizontal padding */
+
+    padding: 2rem 3rem;
+
     margin: 0;
-    /* Remove default margin if any */
+
+    position: relative;
 }
 
 
-/* Wrapper to control spacing between sections */
+/* =========================================
+   HERO WRAPPER
+========================================= */
 
 .hero-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    /* Very tight spacing between each block */
+
+    gap: 0.8rem;
 }
 
 
-/* Hero text containers */
+/* =========================================
+   HERO TEXT CONTAINERS
+========================================= */
 
 .hero-text,
 .hero1-text,
 .hero2-text {
     max-width: 70%;
+
     margin: 0;
-    /* Remove extra spacing */
+
+    position: relative;
 }
 
-
-/* Headings */
 
 .hero-text h1,
 .hero1-text h1,
 .hero2-text h1 {
     font-size: 3.5rem;
-    margin-bottom: 0.3rem;
-    /* Even smaller margin below headings */
+    margin-bottom: 0.5rem;
+
+    background: linear-gradient(
+        180deg,
+        #fffde0 0%,
+        #fff3a3 12%,
+        #ffd84d 28%,
+        #d4af37 45%,
+        #fff1a8 52%,
+        #e6c34f 65%,
+        #b8860b 85%,
+        #7a5600 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5))
+        drop-shadow(0 0 8px rgba(255, 215, 80, 0.35))
+        drop-shadow(0 0 18px rgba(212, 175, 55, 0.25));
+}
+
+/* Gold accent underneath heading */
+
+.hero-text h1::after,
+.hero1-text h1::after,
+.hero2-text h1::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 3px;
+
+    margin-top: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f5d76e,
+            transparent
+        );
+
+    border-radius: 10px;
 }
 
 
-/* Paragraph text */
+/* =========================================
+   HERO PARAGRAPH
+========================================= */
 
 .hero-text p,
 .hero1-text p,
 .hero2-text p {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-    /* Reduced space below paragraphs */
+    font-size: 1.35rem;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    margin-bottom: 0.7rem;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 
-/* Special color for hero2 background */
+/* =========================================
+   HERO 2
+========================================= */
 
 .hero2-text p {
     color: #ffffff;
 }
 
+
 .hero2-text h3 {
-    color: white;
+    color: #f1ce63;
+
     font-size: 2rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.4);
 }
+
+
+/* =========================================
+   HERO CONTENT
+   ANIMATION KEPT EXACTLY
+========================================= */
 
 .hero-text .content,
 .hero1-text .content,
 .hero2-text .content {
     display: block;
+
     opacity: 0;
+
     transform: translateX(-20px);
-    background: transparent;
-    /* Semi-transparent black */
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    /* Adds the blur */
-    -webkit-backdrop-filter: blur(5px);
-    /* Safari support */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+
+    /* Modern glass design */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    padding: 1.3rem 1.5rem;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    border-left:
+        3px solid rgba(212, 175, 55, 0.8);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    /* KEEPING YOUR ORIGINAL ANIMATION */
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
 }
 
 
-/* On hover: fade and slide in */
+/* =========================================
+   HOVER ANIMATION
+   UNCHANGED
+========================================= */
 
 .hero-text:hover .content,
 .hero1-text:hover .content,
 .hero2-text:hover .content {
     opacity: 1;
+
     transform: translateX(0);
 }
 
 
-/* On hover: fade and slide in */
+/* =========================================
+   CONTENT TEXT
+========================================= */
 
-.hero-text:hover .content,
-.hero1-text:hover .content,
-.hero2-text:hover .content {
-    opacity: 1;
-    transform: translateX(0);
+.hero-text .content p,
+.hero1-text .content p,
+.hero2-text .content p {
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   GOLD HIGHLIGHT
+========================================= */
+
+.hero span,
+.hero1 span,
+.hero2 span {
+    color: #f1ce63;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+
+/* =========================================
+   SUBTLE HERO TEXT ACCENT
+========================================= */
+
+.hero-text::before,
+.hero1-text::before,
+.hero2-text::before {
+    content: "";
+
+    position: absolute;
+
+    left: -18px;
+
+    top: 5px;
+
+    width: 3px;
+
+    height: 45px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #d4af37,
+            transparent
+        );
+
+    border-radius: 10px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero,
+    .hero1,
+    .hero2 {
+        padding: 1.5rem 2rem;
+    }
+
+    .hero-text,
+    .hero1-text,
+    .hero2-text {
+        max-width: 90%;
+    }
+
+    .hero-text h1,
+    .hero1-text h1,
+    .hero2-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p,
+    .hero1-text p,
+    .hero2-text p {
+        font-size: 1.15rem;
+    }
+
+    .hero2-text h3 {
+        font-size: 1.6rem;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero,
+    .hero1,
+    .hero2 {
+        padding: 1.2rem 1.3rem;
+    }
+
+    .hero-text,
+    .hero1-text,
+    .hero2-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1,
+    .hero1-text h1,
+    .hero2-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p,
+    .hero1-text p,
+    .hero2-text p {
+        font-size: 1rem;
+    }
+
+    .hero2-text h3 {
+        font-size: 1.35rem;
+    }
+
+    .hero-text .content,
+    .hero1-text .content,
+    .hero2-text .content {
+        padding: 1rem;
+    }
+
 }

@@ -1,4 +1,4 @@
-/* -------------------- GLOBAL RESET -------------------- */
+/* -------------------- GLOBAL RESET -------------------- areacoverage.css */
 
 * {
     margin: 0;
@@ -23,7 +23,7 @@ body::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('bg/12.jpg');
+    background-image: url('bg/12.webp');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -46,416 +46,1206 @@ body {
     background-color: #f7f9fc;
 }
 
-
-/* -------------------- NAVBAR -------------------- */
+/* =========================================
+   MODERN GLASS NAVBAR
+========================================= */
 
 nav {
-    background: rgba(255, 255, 255, 0.2);
-    /* Semi-transparent white */
-    backdrop-filter: blur(5px);
-    /* Blurs background */
-    -webkit-backdrop-filter: blur(5px);
-    /* Safari support */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     position: sticky;
-    top: 0;
+
+    top: 12px;
+
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1.2rem;
+
+    width: calc(100% - 30px);
+
+    margin: 12px auto 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 15, 15, 0.82),
+            rgba(30, 30, 30, 0.62)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
+
+
+/* =========================================
+   NAVBAR CONTAINER
+========================================= */
 
 .navbar {
-    max-width: 1200px;
+    width: min(1200px, 100%);
+
+    min-height: 75px;
+
     margin: auto;
-    padding: 0.8rem 2rem;
+
+    padding: 8px 20px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
-.logo img {
-    height: 80px;
-    width: auto;
-    margin-right: 20px;
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+
+.logo img {
+    display: block;
+
+    height: 65px;
+
+    width: auto;
+
+    margin-right: 20px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 5px 12px rgba(0, 0, 0, 0.35)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
+
+
+.logo:hover img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 7px 16px rgba(212, 175, 55, 0.2)
+        );
+}
+
+
+/* =========================================
+   NAVIGATION LIST
+========================================= */
+
+.navbar ul {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
 
 .navbar ul li {
     position: relative;
+
+    opacity: 0;
+
+    animation:
+        navFadeUp 0.6s ease forwards;
 }
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .navbar ul li a {
-    display: inline-block;
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
     padding: 10px 15px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
     text-decoration: none;
-    color: white;
-    border-radius: 8px;
-    /* Smooth shape even before hover */
+
+    white-space: nowrap;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 12px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
-/* Hover and Active styles */
+/* =========================================
+   HOVER
+========================================= */
 
-.navbar ul li a:hover,
+.navbar ul li a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
 .navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-color: #7a766cde;
-    transform: scale(1.1);
-    /* Slight expansion */
-    border-radius: 15px;
-    /* ✅ Rounded square shape on hover */
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border-color:
+        rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
 }
 
 
-/* Active link */
+/* =========================================
+   GOLD ACTIVE INDICATOR
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    /* ✅ Rounded shape stays on active */
+.navbar ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f5d76e
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px rgba(212, 175, 55, 0.35);
+
+    transition:
+        width 0.3s ease;
 }
 
 
-/* Optional underline effect on hover */
+/* Hover underline */
 
 .navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background-color: #7a766cde;
-    transform: scaleX(1);
-    transform-origin: bottom center;
-    transition: transform 0.3s ease;
-    border-radius: 2px;
+    width: 45%;
 }
 
 
-/* -------------------- Animation -------------------- */
+/* Active underline */
 
-@keyframes fadeUp {
-    0% {
+.navbar ul li a.active::after {
+    width: 55%;
+}
+
+
+/* =========================================
+   NAVBAR SCROLL / HOVER EFFECT
+========================================= */
+
+nav:hover {
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   NAVIGATION ANIMATION
+========================================= */
+
+@keyframes navFadeUp {
+
+    from {
         opacity: 0;
-        transform: translateY(20px);
-        /* Start slightly below */
+
+        transform:
+            translateY(-12px);
     }
-    100% {
+
+    to {
         opacity: 1;
-        transform: translateY(0);
-        /* End in place */
+
+        transform:
+            translateY(0);
     }
-}
 
-.navbar ul li {
-    animation: fadeUp 0.6s ease forwards;
-    opacity: 0;
 }
 
 
-/* Staggered animation (each list item appears with delay) */
+/* =========================================
+   STAGGERED NAVIGATION
+========================================= */
 
 .navbar ul li:nth-child(1) {
     animation-delay: 0.1s;
 }
 
 .navbar ul li:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .navbar ul li:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .navbar ul li:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.25s;
 }
 
 .navbar ul li:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .navbar ul li:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: 0.35s;
 }
 
 .navbar ul li:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
 }
 
 .navbar ul li:nth-child(8) {
-    animation-delay: 0.8s;
+    animation-delay: 0.45s;
 }
 
 .navbar ul li:nth-child(9) {
-    animation-delay: 0.9s;
+    animation-delay: 0.5s;
 }
 
 .navbar ul li:nth-child(10) {
-    animation-delay: 1s;
+    animation-delay: 0.55s;
 }
 
 
-/* Active link */
+/* =========================================
+   TABLET
+========================================= */
 
-.navbar ul li a.active {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+@media (max-width: 1050px) {
+
+    nav {
+        width: calc(100% - 20px);
+    }
+
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .logo img {
+        height: 58px;
+    }
+
+    .navbar ul {
+        gap: 2px;
+    }
+
+    .navbar ul li a {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
 }
 
-.navbar ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    /* Thin line for underline */
-    background-color: rgb(0, 0, 0);
-    transform: scaleX(0);
-    /* Initially hidden */
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
 
-
-/* -------------------- Responsive -------------------- */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
-    .navbar ul {
+
+    nav {
+        position: sticky;
+
+        top: 8px;
+
+        width: calc(100% - 16px);
+
+        border-radius: 18px;
+    }
+
+    .navbar {
         flex-direction: column;
-        /* Vertical stack */
-        gap: 10px;
-        align-items: center;
-        /* Center items */
+
+        gap: 12px;
+
+        padding: 12px 15px;
     }
+
+    .logo {
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .logo img {
+        height: 58px;
+
+        margin-right: 0;
+    }
+
+    .navbar ul {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
     .navbar ul li a {
-        font-size: 16px;
-        padding: 12px 20px;
-        display: block;
+        padding: 8px 12px;
+
+        font-size: 12px;
+
+        border-radius: 10px;
     }
+
+    .navbar ul li a:hover {
+        transform: translateY(-1px);
+    }
+
 }
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 480px) {
-    .navbar ul li a {
-        font-size: 14px;
-        padding: 10px 18px;
+
+    nav {
+        width: calc(100% - 10px);
+
+        top: 5px;
+
+        border-radius: 15px;
     }
+
+    .navbar {
+        padding: 10px;
+
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .navbar ul {
+        gap: 4px;
+    }
+
+    .navbar ul li a {
+        padding: 7px 9px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.2px;
+    }
+
 }
 
 
-/* -------------------- AREA COVERAGE SECTION -------------------- */
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .navbar ul li a {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
+}
+
+/* =========================================
+   MODERN AREA COVERAGE SECTION
+========================================= */
 
 .area-coverage {
-    text-align: center;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 50px auto;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    color: #ffffff;
     position: relative;
+
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 60px auto;
+    padding: 65px 40px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 26px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
 }
 
-.area-coverage h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* semi-transparent black background */
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    /* shrink box to text width */
+
+/* =========================================
+   DECORATIVE GLOW
+========================================= */
+
+.area-coverage::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: -160px;
+    left: -100px;
+
+    background:
+        rgba(212, 175, 55, 0.13);
+
+    filter: blur(90px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
 }
+
+
+.area-coverage::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    bottom: -150px;
+    right: -100px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    filter: blur(90px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.area-coverage h2 {
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-block;
+
+    margin: 0 auto 45px;
+
+    padding: 13px 32px;
+
+    color: #ffffff;
+
+    font-size: clamp(28px, 4vw, 43px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid rgba(212, 175, 55, 0.4);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Gold underline */
 
 .area-coverage h2::after {
     content: "";
+
     display: block;
-    width: 80px;
-    height: 4px;
-    background: #ffcc00;
-    margin: 12px auto 0;
-    border-radius: 2px;
+
+    width: 50%;
+    height: 3px;
+
+    margin: 10px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            #f5d76e,
+            #d4af37,
+            transparent
+        );
+
+    border-radius: 10px;
 }
 
 
-/* Slideshow container */
+.area-coverage h2:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(212, 175, 55, 0.7);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+
+/* =========================================
+   SLIDESHOW
+========================================= */
 
 .slideshow {
     position: relative;
+
+    z-index: 2;
+
     width: 100%;
-    max-width: 100%;
-    height: 500px;
+    height: 520px;
+
     margin: 0 auto;
+
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 
-/* Each slide */
+/* =========================================
+   SLIDE
+========================================= */
 
 .slide {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.7s ease-in-out;
+
     display: flex;
+
     flex-direction: column;
-    /* stack image and text */
+
     justify-content: center;
     align-items: center;
-    background: transparent;
-    padding: 20px 40px;
+
+    padding: 25px 40px;
+
     box-sizing: border-box;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.459),
+            transparent 70%
+        );
+
+    transition:
+        opacity 0.8s ease-in-out;
+
+    pointer-events: none;
 }
+
 
 .slide.active {
     opacity: 1;
+
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    pointer-events: auto;
 }
 
+
+/* =========================================
+   REGION MAP
+========================================= */
+
 .region-map {
-    width: 550px;
-    height: 620px;
-    border-radius: 20px;
-    /* <- soft rounded corners */
-    object-fit: cover;
-    cursor: default;
     position: relative;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+    width: min(550px, 75%);
+    height: 420px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 18px;
+
+    cursor: default;
+
+    filter:
+        drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
+
+
+.slide.active .region-map {
+    animation:
+        mapReveal 0.8s ease forwards;
+}
+
+
+.slide:hover .region-map {
+    transform: scale(1.02);
+
+    filter:
+        drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5));
+}
+
+
+/* =========================================
+   REGION TITLE
+========================================= */
 
 .slide h3 {
     position: absolute;
+
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
+    z-index: 3;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: max-content;
+
+    max-width: 85%;
+
+    margin: 0;
+
+    padding: 14px 28px;
+
     color: #ffffff;
-    /* White font */
-    font-size: 3.5rem;
+
+    font-size: clamp(30px, 5vw, 56px);
+
     font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 12px;
+
+    letter-spacing: 2px;
+
     text-transform: uppercase;
+
+    text-align: center;
+
     white-space: nowrap;
+
+    background:
+        rgba(0, 0, 0, 0.5);
+
+    border:
+        1px solid rgba(255, 196, 4, 0.45);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.493);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.8);
+
     pointer-events: none;
-    width: auto;
-    /* Black outline effect using text-shadow */
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
 }
 
 
-/* Arrows */
+/* =========================================
+   ARROWS
+========================================= */
 
 .prev,
 .next {
-    cursor: pointer;
     position: absolute;
+
     top: 50%;
-    width: auto;
-    padding: 12px;
-    margin-top: -22px;
-    color: white;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    padding: 0;
+
+    margin: 0;
+
+    transform:
+        translateY(-50%);
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
     font-weight: bold;
-    font-size: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     user-select: none;
-    z-index: 2;
-    transition: background 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.prev:hover,
-.next:hover {
-    background: gold;
-}
 
 .prev {
     left: 20px;
 }
+
 
 .next {
     right: 20px;
 }
 
 
-/* Dots */
+.prev:hover,
+.next:hover {
+    color: #111111;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f5d76e
+        );
+
+    border-color:
+        #f5d76e;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================
+   DOT NAVIGATION
+========================================= */
 
 .dots {
     position: absolute;
-    bottom: 1px;
+
+    bottom: 18px;
+
+    left: 0;
+
+    z-index: 5;
+
     width: 100%;
+
     text-align: center;
-    z-index: 2;
 }
+
 
 .dot {
-    cursor: pointer;
-    height: 14px;
-    width: 14px;
-    margin: 2px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
     display: inline-block;
-    transition: background 0.3s ease;
+
+    width: 9px;
+    height: 9px;
+
+    margin: 0 5px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.dot.active,
+
 .dot:hover {
-    background: rgb(0, 0, 0);
+    background:
+        rgba(212, 175, 55, 0.7);
+
+    transform: scale(1.2);
 }
 
 
-/* Responsive Slideshow */
+.dot.active {
+    width: 28px;
 
-@media (max-width: 768px) {
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            #f5d76e
+        );
+
+    border-color:
+        #d4af37;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+
+/* =========================================
+   MAP ANIMATION
+========================================= */
+
+@keyframes mapReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .area-coverage {
+        width: calc(100% - 30px);
+
+        padding: 55px 25px;
+    }
+
+    .slideshow {
+        height: 450px;
+    }
+
+    .region-map {
+        width: 80%;
+        height: 350px;
+    }
+
+    .slide h3 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .area-coverage {
+        width: calc(100% - 20px);
+
+        margin: 40px auto;
+
+        padding: 45px 15px;
+
+        border-radius: 18px;
+    }
+
+    .area-coverage h2 {
+        font-size: 26px;
+
+        letter-spacing: 1px;
+
+        padding: 10px 20px;
+
+        margin-bottom: 30px;
+    }
+
+    .slideshow {
+        height: 380px;
+
+        border-radius: 17px;
+    }
+
     .slide {
-        flex-direction: column;
         padding: 15px;
     }
+
     .region-map {
         width: 90%;
-        max-height: 300px;
-        margin-bottom: 15px;
+
+        height: 270px;
+
+        margin-bottom: 10px;
     }
+
     .slide h3 {
-        position: static;
-        transform: none;
-        width: 100%;
-        text-align: center;
+        top: 50%;
+
+        width: auto;
+
+        max-width: 80%;
+
+        padding: 10px 18px;
+
+        font-size: 25px;
+
+        line-height: 1.2;
+
         white-space: normal;
-        font-size: 2.2rem;
-        padding: 10px 15px;
-        justify-content: center;
-        margin-top: 10px;
-        pointer-events: auto;
-        background: rgba(0, 0, 0, 0.6);
+
+        border-radius: 30px;
     }
+
+    .prev,
+    .next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .dots {
+        bottom: 12px;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+
+        margin: 0 4px;
+    }
+
+    .dot.active {
+        width: 22px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .area-coverage h2 {
+        font-size: 23px;
+    }
+
+    .slideshow {
+        height: 330px;
+    }
+
+    .region-map {
+        height: 230px;
+    }
+
+    .slide h3 {
+        font-size: 21px;
+
+        padding: 9px 15px;
+    }
+
+    .prev,
+    .next {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+    }
+
 }
