@@ -1,0 +1,27 @@
+# Svelte / Vite
+node_modules/
+.svelte-kit/
+build/
+.vite/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Legacy static site backup (keep original HTML/CSS if needed)
+# Uncomment to ignore legacy files in git if you only want Svelte source
+# *.html.bak

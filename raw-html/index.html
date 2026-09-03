@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="MDC.webp" type="image/webp">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="google-site-verification" content="u6iVrn6PHCdKQ5BDtymGiSXWIzmdXd72B7p929xlPNQ" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="parent">
+
+            <!-- NAVIGATION -->
+            <nav>
+                <div class="navbar">
+                    <a href="home.html">
+                        <span class="logo">
+              <img src="MDC.webp" alt="Your Logo">
+            </span>
+                    </a>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="practices.html">Practices</a></li>
+                        <li><a href="testimony.html">Testimony</a></li>
+                        <li><a href="photos.html">Activity</a></li>
+                        <li><a href="areacoverage.html">Area Coverage</a></li>
+                        <li><a href="communityservice.html">Community Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- MAIN CONTENT -->
+            <div class="main_content">
+                <!-- Left Section -->
+                <div class="left">
+                    <h2 class="fade-in">Mission</h2>
+                    <p class="slide-in">“We work hard every day to make M Debt Corporation known locally and internationally as the best in quality service.”</p>
+
+                    <h2 class="fade-in">Vision</h2>
+                    <p class="slide-in">"We are passionate about helping businesses through outsourcing to reduce manpower and maximize their business potential. We aim to be a leading local and international outsourcing company."</p>
+
+                    <div class="left-image">
+                        <a href="index.html">
+                            <img src="MDC.webp" alt="Company Image">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="right">
+                    <h2 class="fade-in">Core Values</h2>
+
+                    <h3 class="bounce">Good Citizenship</h3>
+                    <p class="fade-in">We attract and recruit hardworking people in local residence.</p>
+                    <p class="fade-in">Helping people achieve their ambition in the right way.</p>
+                    <p class="fade-in">We build our organization from within , promoting and rewarding people without regards to any differences unrelated to performance.</p>
+
+                    <h3 class="bounce">Respect</h3>
+                    <p class="fade-in">We respect and Value those we work with and the contribution that they make.</p>
+
+                    <h3 class="bounce">Client’s Commitment</h3>
+                    <p class="fade-in">We are committed to delivering the specific services to our clients needs.</p>
+                    <p class="fade-in">We put our clients at the center of what we do.</p>
+                    <p class="fade-in">We use our energy skills and resources to deliver the best sustainable results.</p>
+
+                    <h3 class="bounce">Integrity</h3>
+                    <p class="fade-in">We act fairly ethically and openly in all we do.</p>
+                    <p class="fade-in">We always try to do the right things.</p>
+                    <p class="fade-in">We are honest and straight forward with each other.</p>
+
+                    <h3 class="bounce">Trust</h3>
+                    <p class="fade-in">We are determining to best at doing what matter most.</p>
+
+                    <h3 class="bounce">Stewardship</h3>
+                    <p class="fade-in">We are passionate about leaving things better than we found them.</p>
+                </div>
+            </div>
+
+            <script>
+                let lastScrollTop = 0;
+                const nav = document.querySelector("nav");
+
+                window.addEventListener("scroll", function() {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (currentScroll > lastScrollTop) {
+                        // Scrolling down
+                        nav.style.top = "-100px"; // hide
+                    } else {
+                        // Scrolling up
+                        nav.style.top = "0"; // show
+                    }
+
+                    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+                });
+            </script>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
