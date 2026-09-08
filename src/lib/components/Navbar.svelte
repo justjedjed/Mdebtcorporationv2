@@ -50,8 +50,7 @@
       <img src="/MDC.webp" alt="M Debt Corporation" />
       <span class="brand-text">
         <strong>M Debt Corporation</strong>
-       
-      </span>
+    
     </a>
 
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded={mobileOpen} onclick={toggleMobile}>
@@ -68,7 +67,7 @@
 
       <li class="dropdown" class:show={showDropdown}>
         <a href="/activity" class="dropbtn" class:active={isActive('/activity')} onclick={toggleDropdown}>
-          Activity <span style="font-size:10px;opacity:0.7">▾</span>
+          Activity <span style="font-size:9px;opacity:0.7;transition:transform 0.18s" class:rot={showDropdown}>▾</span>
         </a>
         <div class="dropdown-content">
           <a href="/activity#gallery" onclick={(e)=>handleDropdownLinkClick(e,'#gallery')}>Orientations</a>
@@ -83,3 +82,7 @@
     </ul>
   </div>
 </header>
+
+<style>
+  .rot{transform:rotate(180deg);display:inline-block}
+</style>
