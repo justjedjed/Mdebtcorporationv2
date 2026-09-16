@@ -8,7 +8,7 @@
   });
   const orientations = [
     ...Array.from({length:36},(_,i)=>`/img/orientation${i+1}.webp`),
-    ...Array.from({length:14},(_,i)=>`/img/new${i+36}.jpg`)
+    ...Array.from({length:13},(_,i)=>`/img/new${i+37}.jpg`)
   ];
   const workshops = ["/img/w.webp","/img/w1.webp","/img/w4.webp","/img/w5.webp","/img/w14.webp","/img/w7.webp","/img/w8.webp","/img/w10.webp","/img/w12.webp","/img/w13.webp"];
   const awards = ["/img/award1.webp","/img/award2.webp"];
@@ -32,7 +32,7 @@
         <span class="num">01</span>
         <h2>Orientations</h2>
       </div>
-      <small>50 photos</small>
+      <small>49 photos</small>
     </div>
     <div class="masonry">
       {#each orientations as src}<div class="card pic"><img src={src} alt="Orientation" loading="lazy" onerror={(e)=>e.currentTarget.parentElement.style.display='none'} /></div>{/each}

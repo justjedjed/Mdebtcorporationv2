@@ -1,10 +1,35 @@
+# M Debt Corporation — Apache rewrites for SvelteKit adapter-static
+# Works with BOTH directory-style (about-us/index.html) and
+# legacy file-style (about-us.html) output. Fixes 404 on reload.
+DirectorySlash On
+DirectoryIndex index.html
+
+# Show branded page for truly unknown URLs (keeps 404 status)
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # 1. Extensionless legacy support: /about-us -> /about-us.html (if directory version missing)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+)$ $1.html [L]
+
+  # 2. Directory-index support: /about-us -> /about-us/index.html
+  # (Apache normally does this via DirectorySlash, this is a fallback)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^.*$ /404.html [L]
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
 </IfModule>
+
+# Cache hashed build assets aggressively, never cache HTML
+<IfModule mod_headers.c>
+  <FilesMatch "^index\.html$|^404\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+<FilesMatch "\.(js|css|webp|jpg|jpeg|png|gif|svg|woff2?|mp4)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>

@@ -14,6 +14,11 @@ const config = {
       $lib: './src/lib'
     },
     prerender: {
+      // Crawl from `/` so every route is prerendered.
+      // With `trailingSlash: 'always'` (see src/routes/+layout.ts)
+      // this outputs about-us/index.html etc., which fixes
+      // 404-on-reload on any static host.
+      entries: ['*', '/'],
       handleMissingId: 'ignore',
       handleHttpError: 'warn'
     }

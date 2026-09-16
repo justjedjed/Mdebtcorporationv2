@@ -1,0 +1,3 @@
+# Netlify / Cloudflare Pages — prerendered files are served directly.
+# Truly unknown URLs show the branded SvelteKit 404 page (with 404 status).
+/* /404.html 404
