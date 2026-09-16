@@ -7,6 +7,13 @@
     "/photo/new5.jpg",
     "/photo/new6.jpg",
     "/photo/new7.jpg",
+    "/photo/new8.webp",
+    "/photo/new9.webp",
+    "/photo/new10.webp",
+    "/photo/new11.webp",
+    "/photo/new12.webp",
+    "/photo/new13.webp",
+    "/photo/new14.webp",
     "/photo/c8.webp",
     "/photo/c9.webp",
     "/photo/c10.webp",
@@ -47,12 +54,6 @@
 </section>
 
 <style>
-  .h1 em {
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--gold-deep);
-    font-weight: 500;
-  }
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

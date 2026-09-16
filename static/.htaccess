@@ -6,5 +6,5 @@
   RewriteRule ^(.+)$ $1.html [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^.*$ /200.html [L]
+  RewriteRule ^.*$ /404.html [L]
 </IfModule>

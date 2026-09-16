@@ -50,7 +50,7 @@
       <img src="/MDC.webp" alt="M Debt Corporation" />
       <span class="brand-text">
         <strong>M Debt Corporation</strong>
-    
+      </span>
     </a>
 
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded={mobileOpen} onclick={toggleMobile}>

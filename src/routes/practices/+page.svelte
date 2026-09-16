@@ -39,7 +39,6 @@
 </section>
 
 <style>
-  .h1 em{font-family:var(--font-serif);font-style:italic;color:var(--gold-deep);font-weight:500}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px}
   .item{overflow:hidden;display:flex;flex-direction:column;gap:0;position:relative}
   .item::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);z-index:1}

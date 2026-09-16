@@ -6,7 +6,10 @@
     window.addEventListener('scroll', onScroll, {passive:true});
     return ()=> window.removeEventListener('scroll', onScroll);
   });
-  const orientations = Array.from({length:35},(_,i)=>`/img/orientation${i+1}.webp`);
+  const orientations = [
+    ...Array.from({length:36},(_,i)=>`/img/orientation${i+1}.webp`),
+    ...Array.from({length:14},(_,i)=>`/img/new${i+36}.jpg`)
+  ];
   const workshops = ["/img/w.webp","/img/w1.webp","/img/w4.webp","/img/w5.webp","/img/w14.webp","/img/w7.webp","/img/w8.webp","/img/w10.webp","/img/w12.webp","/img/w13.webp"];
   const awards = ["/img/award1.webp","/img/award2.webp"];
   function toTop(){ window.scrollTo({top:0,behavior:'smooth'})}
@@ -29,10 +32,10 @@
         <span class="num">01</span>
         <h2>Orientations</h2>
       </div>
-      <small>35 photos</small>
+      <small>50 photos</small>
     </div>
     <div class="masonry">
-      {#each orientations as src}<div class="card pic"><img src={src} alt="Orientation" loading="lazy" /></div>{/each}
+      {#each orientations as src}<div class="card pic"><img src={src} alt="Orientation" loading="lazy" onerror={(e)=>e.currentTarget.parentElement.style.display='none'} /></div>{/each}
     </div>
   </div>
 
@@ -71,7 +74,7 @@
   .block-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
   .block-title{display:flex;align-items:center;gap:10px}
   .num{font-family:var(--font-serif);font-size:11px;font-weight:700;color:var(--gold-deep);background:var(--gold-soft);border:1px solid var(--gold-mid);padding:3px 7px;border-radius:999px}
-  .block-head h2{font-family:var(--font-sans);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800;color:var(--white)}
+  .block-head h2{font-family:var(--font-sans);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800;color:var(--ink)}
   .block-head small{color:var(--muted);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--line);background:var(--paper-2);padding:4px 8px;border-radius:999px}
   .masonry{columns:3 240px;column-gap:14px}
   .pic{overflow:hidden;break-inside:avoid;margin:0 0 14px;border-radius:12px;border:1px solid var(--line);position:relative}

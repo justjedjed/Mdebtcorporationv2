@@ -43,7 +43,6 @@
 </section>
 
 <style>
-  .h1 em{font-family:var(--font-serif);font-style:italic;color:var(--gold-deep);font-weight:500}
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px}
   .item{display:flex;flex-direction:column;gap:0;padding:0;border-radius:14px;overflow:hidden;transition:all 0.18s ease;animation:rise 0.35s ease both;animation-delay:var(--d);position:relative}
   .item::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);opacity:0;z-index:1;transition:opacity 0.18s}

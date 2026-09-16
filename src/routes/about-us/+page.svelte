@@ -43,6 +43,7 @@
       <p>M Debt Corporation has vast experience in collecting, settling &amp; re-scheduling debts in an amicable way, handling and following relative legal matters supported by our management team, legal consultants &amp; professional client support personnel.</p>
       <div class="callout">
         <span class="callout-gold"></span>
+        <p>M Debt Corporation can make a difference to your company by <strong>Improving Cash Flow And Minimizing Bad Debts</strong> and our policy is to add value through close contact with our clients.</p>
       </div>
       <p>M Debt Corporation is situated in the heart of <strong>San Francisco, Agusan del Sur</strong> — head office. Our operation covers <strong>Luzon, Visayas and Mindanao</strong>. You are most welcome to visit our office.</p>
     </div>
@@ -92,7 +93,6 @@
   .motto-text .kicker{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.52);font-weight:700}
   .motto-text strong{font-family:var(--font-serif);font-size:clamp(15px,2.2vw,20px);font-weight:600;letter-spacing:-0.015em;color:#fff;line-height:1.15}
   .motto-text em{font-style:italic;color:var(--gold);font-weight:500}
-  .motto-hint{font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:600;white-space:nowrap;align-self:center;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px}
   .motto.active{border-color:var(--gold);box-shadow:0 0 0 4px var(--gold-soft)}
 
   .intro-block{
@@ -121,7 +121,6 @@
   .callout-gold{width:3px;align-self:stretch;background:var(--gold);border-radius:2px;flex-shrink:0}
   .callout p{font-size:15px;color:var(--ink-2);margin:0}
   .right-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .badge-gold{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);background:var(--gold-soft);border:1px solid var(--gold-mid);padding:4px 8px;border-radius:999px}
   .right h3{
     font-family:var(--font-sans);font-size:13.5px; letter-spacing:0.08em; font-weight:800; color:var(--black);
     text-transform:uppercase; border-top:1px solid var(--line-2); padding-top:12px; margin-top:2px;
@@ -142,6 +141,5 @@
     .motto{ padding:14px; gap:12px}
     .motto-mark{font-size:32px}
     .left, .right{ padding:18px; }
-    .motto-hint{display:none}
   }
 </style>

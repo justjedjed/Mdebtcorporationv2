@@ -60,7 +60,6 @@
   .m-head{display:flex;align-items:center;gap:8px}
   .m-icon{width:28px;height:28px;border-radius:50%;background:var(--black);color:var(--gold);display:grid;place-items:center;font-size:12px;border:1px solid var(--black)}
   .m-kicker{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
-  .m-card h3{font-size:20px;line-height:1.25}
   .m-card p{color:var(--muted);font-size:16px;line-height:1.7}
   .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:16px}
   .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}

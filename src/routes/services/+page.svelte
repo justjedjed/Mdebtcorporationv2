@@ -35,7 +35,6 @@
 </section>
 
 <style>
-  .h1 em{font-family:var(--font-serif);font-style:italic;color:var(--gold-deep);font-weight:500}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
   .svc{padding:18px;display:flex;flex-direction:column;gap:10px;transition:all 0.18s ease;animation:rise 0.42s ease both;animation-delay:var(--d);position:relative;overflow:hidden}
   .svc::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);opacity:0;transition:opacity 0.18s}

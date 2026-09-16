@@ -58,13 +58,13 @@ body{
   position:relative;
   isolation:isolate;
 }
-/* Global background image — mdc bg.jpg with transparent overlay — fully responsive */
+/* Global background image — mdc-bg.jpg with transparent overlay — fully responsive */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   z-index:-2;
-  background-image:url("/mdc%20bg.jpg");
+  background-image:url("/mdc-bg.jpg");
   background-size:cover;
   background-position:center 32%;
   background-repeat:no-repeat;
