@@ -3,10 +3,10 @@
     "/photo/new1.webp",
     "/photo/new2.webp",
     "/photo/new3.webp",
-    "/photo/new4.jpg",
-    "/photo/new5.jpg",
-    "/photo/new6.jpg",
-    "/photo/new7.jpg",
+    "/photo/new4.webp",
+    "/photo/new5.webp",
+    "/photo/new6.webp",
+    "/photo/new7.webp",
     "/photo/new8.webp",
     "/photo/new9.webp",
     "/photo/new10.webp",
@@ -48,7 +48,7 @@
 <section class="section">
   <div class="grid">
     {#each items as src, i}<div class="card pic">
-        <img {src} alt="Community {i + 1}" loading="lazy" />
+        <img {src} alt="Community {i + 1}" loading="lazy" decoding="async" onerror={(e)=>e.currentTarget.parentElement.style.display='none'} />
       </div>{/each}
   </div>
 </section>
