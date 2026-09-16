@@ -32,10 +32,6 @@
       </div>
     {/each}
   </div>
-  <div class="note card">
-    <span class="eyebrow">Procedure</span>
-    <p>Every case begins with amicable settlement. Legal filing only upon client approval — with clear reporting and lawful process.</p>
-  </div>
 </section>
 
 <style>
@@ -50,10 +46,5 @@
   .body{padding:16px;display:flex;flex-direction:column;gap:8px}
   .body h3{font-family:var(--font-sans);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800;color:var(--ink)}
   .body p{font-size:15.5px;line-height:1.65;color:var(--muted)}
-  .note{
-    margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-    padding:16px;background:var(--paper-2);border-style:dashed;
-  }
-  .note p{font-size:15.5px;line-height:1.6;color:var(--muted);max-width:62ch}
   @media(max-width:900px){.grid{grid-template-columns:1fr;max-width:520px;margin:14px auto 0}}
 </style>

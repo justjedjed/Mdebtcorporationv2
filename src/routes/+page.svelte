@@ -4,7 +4,7 @@
     { k:"Respect", ps:["We respect and value those we work with and the contribution that they make."]},
     { k:"Client’s Commitment", ps:["We are committed to delivering the specific services to our clients needs.","We put our clients at the center of what we do.","We use our energy skills and resources to deliver the best sustainable results."]},
     { k:"Integrity", ps:["We act fairly, ethically and openly in all we do.","We always try to do the right things.","We are honest and straightforward with each other."]},
-    { k:"Trust", ps:["We are determined to be at our best in what matters most."]},
+    { k:"Trust", ps:["We are determining to be best at doing what matters most."]},
     { k:"Stewardship", ps:["We are passionate about leaving things better than we found them."]},
   ];
 </script>

@@ -19,7 +19,6 @@
 <div class="page-head">
   <div class="section" style="margin:0 auto">
     <span class="eyebrow">Services — 11 lines</span>
-    <p class="lead">Eleven focused lines — from bureau to litigation. Ethical first, amicable always, lawful when required.</p>
   </div>
 </div>
 

@@ -30,7 +30,6 @@
           <h3>Email</h3>
         </div>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mdebtcorporation@gmail.com" class="link">mdebtcorporation@gmail.com</a>
-        <p>Prefer Gmail compose — will open in new tab. Monitored during business hours.</p>
       </div>
       <div class="card c">
         <div class="c-head">
@@ -46,11 +45,11 @@
           <h3>Facebook</h3>
         </div>
         <a href="https://www.facebook.com/profile.php?id=61581063833927" target="_blank" rel="noopener" class="link">Visit Facebook Page →</a>
-        <p>Fastest response for general inquiries.</p>
+   
       </div>
       <div class="card c accent">
         <h3 class="serif" style="font-size:15px;letter-spacing:-0.01em;text-transform:none">Have questions?</h3>
-        <p>We’re here to help — inquiries, assistance, or settlement discussions. Leave things better than we found them.</p>
+        <p>We’re here to assist with your inquiries, provide guidance, and facilitate settlement discussions.</p>
         <div class="rule-gold" style="margin-top:8px"></div>
       </div>
     </div>
